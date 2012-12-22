@@ -17,6 +17,12 @@ func BenchmarkSort10(b *testing.B) {
 	}
 }
 
+func BenchmarkSort10WithInterface(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Sort(DefaultSort.IntSlice(IntSlice10))
+	}
+}
+
 func BenchmarkDefaultSort100(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		DefaultSort.Ints(IntSlice100)
@@ -29,6 +35,12 @@ func BenchmarkSort100(b *testing.B) {
 	}
 }
 
+func BenchmarkSort100WithInterface(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Sort(DefaultSort.IntSlice(IntSlice100))
+	}
+}
+
 func BenchmarkDefaultSort1000(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		DefaultSort.Ints(IntSlice1000)
@@ -38,6 +50,12 @@ func BenchmarkDefaultSort1000(b *testing.B) {
 func BenchmarkSort1000(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Ints(IntSlice1000)
+	}
+}
+
+func BenchmarkSort1000WithInterface(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Sort(DefaultSort.IntSlice(IntSlice1000))
 	}
 }
 
