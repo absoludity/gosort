@@ -6,56 +6,74 @@ import (
 )
 
 func BenchmarkDefaultSort10(b *testing.B) {
+	ints := make([]int, 10)
 	for i := 0; i < b.N; i++ {
-		DefaultSort.Ints(IntSlice10)
+		copy(ints, IntSlice10)
+		DefaultSort.Ints(ints)
 	}
 }
 
 func BenchmarkSort10(b *testing.B) {
+	ints := make([]int, 10)
 	for i := 0; i < b.N; i++ {
-		Ints(IntSlice10)
+		copy(ints, IntSlice10)
+		Ints(ints)
 	}
 }
 
 func BenchmarkSort10WithInterface(b *testing.B) {
+	ints := make([]int, 10)
 	for i := 0; i < b.N; i++ {
-		Sort(DefaultSort.IntSlice(IntSlice10))
+		copy(ints, IntSlice10)
+		Sort(DefaultSort.IntSlice(ints))
 	}
 }
 
 func BenchmarkDefaultSort100(b *testing.B) {
+	ints := make([]int, 100)
 	for i := 0; i < b.N; i++ {
-		DefaultSort.Ints(IntSlice100)
+		copy(ints, IntSlice100)
+		DefaultSort.Ints(ints)
 	}
 }
 
 func BenchmarkSort100(b *testing.B) {
+	ints := make([]int, 100)
 	for i := 0; i < b.N; i++ {
-		Ints(IntSlice100)
+		copy(ints, IntSlice100)
+		Ints(ints)
 	}
 }
 
 func BenchmarkSort100WithInterface(b *testing.B) {
+	ints := make([]int, 100)
 	for i := 0; i < b.N; i++ {
-		Sort(DefaultSort.IntSlice(IntSlice100))
+		copy(ints, IntSlice100)
+		Sort(DefaultSort.IntSlice(ints))
 	}
 }
 
 func BenchmarkDefaultSort1000(b *testing.B) {
+	ints := make([]int, 1000)
 	for i := 0; i < b.N; i++ {
-		DefaultSort.Ints(IntSlice1000)
+		copy(ints, IntSlice1000)
+		DefaultSort.Ints(ints)
 	}
 }
 
 func BenchmarkSort1000(b *testing.B) {
+	ints := make([]int, 1000)
 	for i := 0; i < b.N; i++ {
-		Ints(IntSlice1000)
+		copy(ints, IntSlice1000)
+		Ints(ints)
 	}
 }
 
 func BenchmarkSort1000WithInterface(b *testing.B) {
+	ints := make([]int, 1000)
 	for i := 0; i < b.N; i++ {
-		Sort(DefaultSort.IntSlice(IntSlice1000))
+		copy(ints, IntSlice1000)
+		Sort(DefaultSort.IntSlice(ints))
 	}
 }
 
